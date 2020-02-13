@@ -1,0 +1,52 @@
+
+
+.addPadding{
+  padding-top: 50px;
+}
+
+.input-field input.error {
+  border-bottom: 1px solid red;
+  box-shadow: 0 1px 0 0 red;
+}
+
+.error{
+  border-bottom: 1px solid red;
+  box-shadow: 0 1px 0 0 red;
+  border: red;
+}
+.sticky{
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+.icon-hover:hover:after {
+  content: 'cancel';
+}
+
+.icon-hover:after {
+  content: 'done';
+}
+
+.paddingBottom{
+  padding-bottom: 30px;
+}
+
+.marginBottom{
+  margin-bottom: 50px;
+}
+
+textarea{
+  height: 300px;
+  resize: none;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}

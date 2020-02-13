@@ -1,0 +1,418 @@
+{
+  "request": {
+    "connected": "true"
+  },
+  "users": [
+    {
+      "id": 1,
+      "username": "test",
+      "password": "test",
+      "moderator": true,
+      "favoritePosts": [
+        null,
+        5
+      ]
+    },
+    {
+      "id": 2,
+      "username": "test2",
+      "password": "test2",
+      "moderator": false,
+      "favoritePosts": [
+        3,
+        4,
+        1,
+        5
+      ]
+    },
+    {
+      "moderator": true,
+      "favoritePosts": [
+        3
+      ],
+      "username": "test3",
+      "password": "test3",
+      "id": 3
+    },
+    {
+      "moderator": false,
+      "favoritePosts": [],
+      "username": "test4",
+      "password": "test4",
+      "id": 4
+    },
+    {
+      "moderator": false,
+      "favoritePosts": [
+        5
+      ],
+      "username": "test5",
+      "password": "test5",
+      "id": 5
+    },
+    {
+      "moderator": false,
+      "favoritePosts": [],
+      "username": "test6",
+      "password": "test6",
+      "id": 6
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "Lorem",
+      "body": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat, ex unde omnis iure excepturi eos? Ratione molestias, doloribus veniam numquam iste dolorem cum veritatis id at eaque quasi consequuntur repudiandae!",
+      "numOfFavorites": 26,
+      "comments": [
+        {
+          "username": "test",
+          "body": "test",
+          "dateCreated": "6/2/2019, 6:05:25 PM"
+        },
+        {
+          "username": "test",
+          "body": "One more test",
+          "dateCreated": "6/2/2019, 6:05:46 PM"
+        },
+        {
+          "username": "test",
+          "body": "And a third test",
+          "dateCreated": "6/2/2019, 6:36:28 PM"
+        },
+        {
+          "username": "test",
+          "body": "neki koment",
+          "dateCreated": "6/2/2019, 9:59:06 PM"
+        },
+        {
+          "username": "test2",
+          "body": "commnet od test 2 ",
+          "dateCreated": "6/2/2019, 11:09:05 PM"
+        }
+      ],
+      "imageUrl": "image1.jpg"
+    },
+    {
+      "id": 2,
+      "title": "TEEEST",
+      "body": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat, ex unde omnis iure excepturi eos? Ratione molestias, doloribus veniam numquam iste dolorem cum veritatis id at eaque quasi consequuntur repudiandae!",
+      "numOfFavorites": 69,
+      "comments": [
+        {
+          "username": "test",
+          "body": "fdasfsadf",
+          "dateCreated": "6/2/2019, 6:41:42 PM"
+        }
+      ],
+      "imageUrl": "image2.jpg"
+    },
+    {
+      "title": "test3",
+      "body": "fsdaf",
+      "numOfFavorites": 3,
+      "comments": [
+        {
+          "username": "test",
+          "body": "fdsadf",
+          "dateCreated": "6/2/2019, 6:40:27 PM"
+        },
+        {
+          "username": "test",
+          "body": "fsdafsda",
+          "dateCreated": "6/2/2019, 6:40:56 PM"
+        },
+        {
+          "username": "test2",
+          "body": "Test 2 je reko nesto",
+          "dateCreated": "6/2/2019, 6:42:11 PM"
+        },
+        {
+          "username": "test",
+          "body": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+          "dateCreated": "6/2/2019, 6:50:07 PM"
+        },
+        {
+          "username": "test",
+          "body": "test sa callbackom (valjda je callback?)",
+          "dateCreated": "6/2/2019, 7:02:18 PM"
+        },
+        {
+          "username": "test",
+          "body": "fsda",
+          "dateCreated": "6/2/2019, 7:04:40 PM"
+        },
+        {
+          "username": "test",
+          "body": "fdsafasdfas",
+          "dateCreated": "6/2/2019, 7:08:29 PM"
+        },
+        {
+          "username": "test",
+          "body": "Ae sad da vidimo jel se razlikuju u konzoli",
+          "dateCreated": "6/2/2019, 7:17:28 PM"
+        },
+        {
+          "username": "test",
+          "body": "sta se bre desava?",
+          "dateCreated": "6/2/2019, 7:22:19 PM"
+        },
+        {
+          "username": "test",
+          "body": "dal ce radi?",
+          "dateCreated": "6/2/2019, 7:25:03 PM"
+        },
+        {
+          "username": "test",
+          "body": "sto bre puca?",
+          "dateCreated": "6/2/2019, 7:25:42 PM"
+        },
+        {
+          "username": "test",
+          "body": "a sad jel ce pukne?",
+          "dateCreated": "6/2/2019, 7:26:11 PM"
+        },
+        {
+          "username": "test",
+          "body": "sta se bre desava ovde",
+          "dateCreated": "6/2/2019, 7:46:07 PM"
+        },
+        {
+          "username": "test",
+          "body": "e ponovo",
+          "dateCreated": "6/2/2019, 7:46:33 PM"
+        },
+        {
+          "username": "test",
+          "body": "ajde molim te radi",
+          "dateCreated": "6/2/2019, 7:48:38 PM"
+        },
+        {
+          "username": "test",
+          "body": "sta li ti je be",
+          "dateCreated": "6/2/2019, 7:50:45 PM"
+        },
+        {
+          "username": "test",
+          "body": "zar je stvarno trebalo [0]?",
+          "dateCreated": "6/2/2019, 7:52:20 PM"
+        },
+        {
+          "username": "test",
+          "body": "aaaaaaaaaaaaaaaaaaa",
+          "dateCreated": "6/2/2019, 7:53:07 PM"
+        },
+        {
+          "username": "test",
+          "body": "bbbbbbbbbbbbbbbbbbbbbbb",
+          "dateCreated": "6/2/2019, 7:53:56 PM"
+        },
+        {
+          "username": "test",
+          "body": "ffffffffffffff",
+          "dateCreated": "6/2/2019, 7:54:33 PM"
+        },
+        {
+          "username": "test",
+          "body": "AAAAAAAA OVO RADIIIIIIIIIIIIII",
+          "dateCreated": "6/2/2019, 7:54:40 PM"
+        },
+        {
+          "username": "test",
+          "body": "I TOOOOO BLIZU LEPE PESMEEEEEE",
+          "dateCreated": "6/2/2019, 7:54:47 PM"
+        },
+        {
+          "username": "test2",
+          "body": "ae sada test 2 nesto da kaze ",
+          "dateCreated": "6/2/2019, 7:57:48 PM"
+        },
+        {
+          "username": "test2",
+          "body": "To je to bajco",
+          "dateCreated": "6/2/2019, 7:57:52 PM"
+        }
+      ],
+      "imageUrl": "image1.jpg",
+      "dateCreated": "6/1/2019, 3:33:54 PM",
+      "id": 3
+    },
+    {
+      "title": "New Danger zone mode in CS:GO",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris metus mauris, convallis at accumsan ut, cursus eu neque. Nullam cursus mollis urna varius dapibus. Nunc tellus leo, eleifend quis odio nec, viverra volutpat justo. Mauris commodo tellus eu augue tempus vulputate. Nunc quam mi, cursus non lorem non, commodo efficitur felis. Ut dapibus sollicitudin nulla sit amet ultricies. Morbi ullamcorper rutrum elit, vel laoreet risus mattis sit amet. Suspendisse potenti. Aliquam sagittis in orci non gravida. Nulla mollis tempor odio. Nunc sit amet est sit amet felis tincidunt tincidunt. Suspendisse quis augue hendrerit, tempor metus eget, placerat purus. In sed dui id magna cursus blandit. Fusce non lectus neque. Donec pretium odio eros, id maximus lacus pellentesque vel. Donec at finibus nunc.\n\nMorbi vehicula molestie eros nec dictum. Vivamus blandit auctor erat nec ultrices. Donec maximus cursus hendrerit. In in ipsum velit. Proin eu tincidunt libero, id luctus purus. Nullam ut justo elementum erat ornare sodales. Duis luctus rutrum iaculis. Morbi at aliquet mi.\n\nAliquam ullamcorper lobortis fermentum. Donec cursus odio non luctus bibendum. Fusce accumsan, urna id vulputate ultricies, augue nisl bibendum metus, sed commodo ligula sem sed velit. Nullam vel mauris sed leo finibus lobortis in vitae diam. Etiam nunc orci, posuere eu imperdiet ut, sollicitudin sed dolor. Integer at mattis elit. Nulla dolor lorem, finibus a dui quis, tincidunt ullamcorper ante. Phasellus tincidunt luctus augue, vel feugiat enim gravida eget. Integer vitae massa malesuada erat hendrerit hendrerit sed tempor nunc. Maecenas vulputate nibh tempor feugiat scelerisque.\n\nVivamus maximus porttitor egestas. Maecenas quam turpis, faucibus ut lacinia auctor, elementum at tortor. Duis at consectetur tellus. Etiam placerat pretium magna id bibendum. Nam sed sapien placerat, bibendum odio sed, tincidunt neque. Fusce consequat est ac metus laoreet tempor. Suspendisse vitae ante gravida, blandit diam a, lacinia orci. Fusce pretium eget nulla placerat finibus.\n\nSed tristique purus rutrum suscipit tristique. Fusce ullamcorper at turpis nec mattis. Cras in magna vel libero sodales laoreet. Integer maximus arcu varius imperdiet malesuada. Nunc vel efficitur nibh. Donec tincidunt augue non ornare accumsan. Nulla facilisi. Quisque urna quam, dictum id malesuada nec, cursus vel sem. Suspendisse sollicitudin massa ipsum, in posuere risus luctus ut. Quisque eget dolor ac nibh congue mollis quis vel ipsum. Donec luctus tortor sit amet elit iaculis, ut accumsan leo faucibus. Aenean felis ligula, viverra sit amet mi non, vehicula suscipit sem. Aenean odio quam, volutpat nec dolor pulvinar, finibus convallis risus. Suspendisse tristique nunc ante, ac condimentum quam tristique vitae. Nam bibendum ligula scelerisque suscipit varius.",
+      "numOfFavorites": 2,
+      "comments": [
+        {
+          "username": "test",
+          "body": "The new mode sounds awsome",
+          "dateCreated": "6/2/2019, 10:00:03 PM"
+        },
+        {
+          "username": "test",
+          "body": "e cao bajco",
+          "dateCreated": "6/2/2019, 11:07:58 PM"
+        }
+      ],
+      "imageUrl": "dangerZone.jpg",
+      "dateCreated": "6/2/2019, 9:59:27 PM",
+      "author": "test",
+      "authorId": 1,
+      "id": 4
+    }
+  ],
+  "news": [
+    {
+      "id": 1,
+      "time": "6/1/2019, 3:44:48 PM",
+      "author": "test",
+      "body": "test published a new post \"How to spray control the AK-47\""
+    },
+    {
+      "time": "6/1/2019, 3:46:01 PM",
+      "author": "test",
+      "body": "test published a new post \"fsadfsafsafsafsda\"",
+      "id": 2
+    },
+    {
+      "time": "6/1/2019, 4:04:15 PM",
+      "author": "test",
+      "body": "test published a new post \"News test\"",
+      "id": 3
+    },
+    {
+      "time": "6/1/2019, 4:28:53 PM",
+      "author": "test",
+      "body": "test published a new post \"fds\"",
+      "id": 4
+    },
+    {
+      "time": "6/1/2019, 4:29:15 PM",
+      "author": "test",
+      "body": "test published a new post \"fewaf\"",
+      "id": 5
+    },
+    {
+      "time": "6/1/2019, 5:18:29 PM",
+      "author": "test",
+      "body": "test published a new post \"Prvi test sa ID-em\"",
+      "id": 6
+    },
+    {
+      "time": "6/2/2019, 8:59:42 PM",
+      "author": "test",
+      "body": " published a new post \"New battle royale mode in CS:GO\"",
+      "id": 7
+    },
+    {
+      "time": "6/2/2019, 9:04:22 PM",
+      "author": "test",
+      "body": " published a new post \"New Danger zone mode in CS:GO\"",
+      "id": 8
+    },
+    {
+      "time": "6/2/2019, 9:05:26 PM",
+      "author": "test",
+      "body": " published a new post \"New Danger zone mode in CS:GO\"",
+      "id": 9
+    },
+    {
+      "time": "6/2/2019, 9:24:08 PM",
+      "author": "test",
+      "body": " published a new post \"fsd\"",
+      "id": 10
+    },
+    {
+      "time": "6/2/2019, 9:26:35 PM",
+      "author": "test",
+      "body": " published a new post \"f\"",
+      "id": 11
+    },
+    {
+      "time": "6/2/2019, 9:32:01 PM",
+      "author": "test",
+      "body": " published a new post \"Da li ce automatski da se azurira\"",
+      "id": 12
+    },
+    {
+      "time": "6/2/2019, 9:32:46 PM",
+      "author": "test",
+      "body": " published a new post \"Htelo je ali sam morao da obrnem redosled\"",
+      "id": 13
+    },
+    {
+      "time": "6/2/2019, 9:43:00 PM",
+      "author": "test",
+      "body": " published a new post \"Ajde da vidimo jel se sve lepo azurirja\"",
+      "id": 14
+    },
+    {
+      "time": "6/2/2019, 9:43:00 PM",
+      "author": "test",
+      "body": " deleted the post  \"Ajde da vidimo jel se sve lepo azurirja\"",
+      "id": 15
+    },
+    {
+      "time": "6/2/2019, 9:59:27 PM",
+      "author": "test",
+      "body": " published a new post \"New Danger zone mode in CS:GO\"",
+      "id": 16
+    },
+    {
+      "time": "6/2/2019, 10:17:37 PM",
+      "author": "test",
+      "body": " published a new post \"teest2\"",
+      "id": 17
+    },
+    {
+      "time": "6/2/2019, 10:17:37 PM",
+      "author": "test",
+      "body": " deleted the post  \"teest2\"",
+      "id": 18
+    },
+    {
+      "time": "6/2/2019, 10:18:27 PM",
+      "author": "test",
+      "body": " deleted the post  \"test\"",
+      "id": 19
+    },
+    {
+      "time": "6/2/2019, 10:19:09 PM",
+      "author": "test",
+      "body": " published a new post \"test\"",
+      "id": 20
+    },
+    {
+      "time": "6/2/2019, 10:19:09 PM",
+      "author": "test",
+      "body": " deleted the post  \"test\"",
+      "id": 21
+    },
+    {
+      "time": "6/2/2019, 11:08:23 PM",
+      "author": "test",
+      "body": " published a new post \"How to spray control the AK-47\"",
+      "id": 22
+    },
+    {
+      "time": "6/2/2019, 11:08:23 PM",
+      "author": "test",
+      "body": " deleted the post  \"How to spray control the AK-47\"",
+      "id": 23
+    },
+    {
+      "time": "6/2/2019, 11:11:43 PM",
+      "author": "test",
+      "body": " published a new post \"How to spray control the AK-47\"",
+      "id": 24
+    },
+    {
+      "time": "6/2/2019, 11:11:43 PM",
+      "author": "test",
+      "body": " deleted the post  \"How to spray control the AK-47\"",
+      "id": 25
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
