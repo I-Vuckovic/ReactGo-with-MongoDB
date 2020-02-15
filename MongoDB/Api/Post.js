@@ -4,9 +4,9 @@ const Post = require('../DB/Post');
 const route = express.Router();
 
 route.post('/add', async (req, res) => {
-  const { id, title, imageUrl, body, numOfFavorites, comments, dateCreated, author, authorId} = req.body;
+  const { title, imageUrl, body, numOfFavorites, comments, dateCreated, author, authorId} = req.body;
   let post = {};
-  post.id = id;
+  //post.id = id;
   post.title = title;
   post.imageUrl = imageUrl;
   post.body = body;
@@ -21,9 +21,9 @@ route.post('/add', async (req, res) => {
 });
 
 route.post('/update', async (req, res) => {
-  const { id, title, imageUrl, body, numOfFavorites, comments, dateCreated, author, authorId} = req.body;
+  const { _id, title, imageUrl, body, numOfFavorites, comments, dateCreated, author, authorId} = req.body;
   let post = {};
-  post.id = id;
+  post._id = _id;
   post.title = title;
   post.imageUrl = imageUrl;
   post.body = body;
@@ -33,7 +33,7 @@ route.post('/update', async (req, res) => {
   post.author = author;
   post.authorId = authorId;
   let postModel = new Post(post);
-  await Post.replaceOne({'id':id},post)
+  await Post.replaceOne({'_id':_id},post)
   res.json(postModel);
 });
 
@@ -59,7 +59,7 @@ route.get("/", (req, res, next) => {
 
 route.get("/:postId", (req, res, next) => {
   const id = req.params.postId;
-  Post.find({"id":id})
+  Post.find({"_id":id})
     .exec()
     .then(doc => {
       console.log("From database", doc);
@@ -79,7 +79,7 @@ route.get("/:postId", (req, res, next) => {
 
 route.get("/delete/:postId", (req, res, next) => {
   const id = req.params.postId;
-  Post.deleteOne({"id":id})
+  Post.deleteOne({"_id":id})
     .exec()
     .then(doc => {
       
