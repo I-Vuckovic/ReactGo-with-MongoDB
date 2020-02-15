@@ -4,3 +4,6 @@ I u klijnetu i u serveru (MongoDB) prvo treba pokrenuti komandu "npm install" ka
 
 Nakon toga react (client) se pokrece komandom "npm run start" koja pokrece react-ovu skriptu.
 Server se pokrece komandom "npm run server" koja pokrece nodemon paket.
+
+
+Link do repozitorijuma - https://github.com/I-Vuckovic/ReactGo-with-MongoDB
