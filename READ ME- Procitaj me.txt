@@ -1,0 +1,6 @@
+Baza je implementirana na cloud-u preko MongoDB atlasa. Server je konfigurisan da se automatski poveze na nju.
+
+I u klijnetu i u serveru (MongoDB) prvo treba pokrenuti komandu "npm install" kako bi se instalirali svi potrebni moduli.
+
+Nakon toga react (client) se pokrece komandom "npm run start" koja pokrece react-ovu skriptu.
+Server se pokrece komandom "npm run server" koja pokrece nodemon paket.
