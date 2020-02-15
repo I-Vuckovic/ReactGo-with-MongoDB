@@ -6,7 +6,7 @@ const post = new mongoose.Schema({
   imageUrl: String,
   body: String,
   numOfFavorites: String,
-  comments: [String],
+  comments: [Object],
   dateCreated: String,
   author: String,
   authorId: String,
