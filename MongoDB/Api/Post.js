@@ -7,7 +7,7 @@ route.post('/add', async (req, res) => {
   const { title, imageUrl, body, numOfFavorites, comments, dateCreated, author, authorId} = req.body;
   
   let post = {};
-  post.id = await Post.count();
+  //post.id = await Post.count() + Math.floor(Math.random()*10000);
   post.title = title;
   post.imageUrl = imageUrl;
   post.body = body;
@@ -21,10 +21,14 @@ route.post('/add', async (req, res) => {
   res.json(postModel);
 });
 
+route.post('/add', async (req, res) => {
+  
+})
+
 route.post('/update', async (req, res) => {
-  const { id, title, imageUrl, body, numOfFavorites, comments, dateCreated, author, authorId} = req.body;
+  const {  title, imageUrl, body, numOfFavorites, comments, dateCreated, author, authorId} = req.body;
   let post = {};
-  post.id = id;
+  post._id = _id;
   post.title = title;
   post.imageUrl = imageUrl;
   post.body = body;
@@ -80,7 +84,7 @@ route.get("/:postId", (req, res, next) => {
 
 route.get("/delete/:postId", (req, res, next) => {
   const id = req.params.postId;
-  Post.deleteOne({"id":id})
+  Post.deleteOne({"_id":id})
     .exec()
     .then(doc => {
       
