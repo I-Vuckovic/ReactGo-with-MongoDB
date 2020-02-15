@@ -25,14 +25,15 @@ export async function fetchUserByUsername(username: string) {
         
 }
 
-export function addToFavorites(postId: number, userId: number) {
+
+export function addToFavorites(postId: number, userId: string) {
     try {
-        return fetch(`${USERS}/${userId}`)
+        return fetch(`${USERS}/id/${userId}`)
             .then(res => res.json())
             .then(res => {
                 res.favoritePosts = [...res.favoritePosts, postId];
-                return fetch(`${USERS}/${userId}`, {
-                    method: 'PUT',
+                return fetch(`${USERS}/update`, {
+                    method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
                     },
@@ -53,7 +54,7 @@ export function removeFromFavorites(postId: number, userId: number) {
             .then(res => {
                 res.favoritePosts = res.favoritePosts.filter((id:number) => id !== postId);
                 return fetch(`${USERS}/${userId}`, {
-                    method: 'PUT',
+                    method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
                     },

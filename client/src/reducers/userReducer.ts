@@ -42,7 +42,6 @@ export function userReducer(state: userState = initialState, action: Action) {
         }
         case LOGIN_APPROVED: {
             const {user} = action as loginApproved;
-            console.log(action)
             console.log(user);
             localStorage.setItem("username", user.username);
             localStorage.setItem('id', user._id!);

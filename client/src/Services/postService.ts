@@ -30,8 +30,8 @@ export async function updatePost_PUT(incrementer: number, postId: number) {
     const res = await fetch(`${POSTS}/${postId}`);
     const res_1 = await res.json();
     res_1.numOfFavorites += incrementer;
-    const res_2 = await fetch(`${POSTS}/${postId}`, {
-        method: 'PUT',
+    const res_2 = await fetch(`${POSTS}/update`, {
+        method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
@@ -84,7 +84,7 @@ export function addCommentToPost(postId:number , comment: Comment){
     .then(res => {
         res.comments = [...res.comments, comment];
         return fetch(`${POSTS}/${postId}`, {
-            method: "PUT",
+            method: "POST",
             headers:{
                 'Content-Type': 'application/json'
             },
