@@ -43,6 +43,7 @@ export function* loginFlow() {
             const request = yield take(LOGIN_REQUEST);
             const { user } = request;
             const result = yield fetchUser(user);
+            console.log(result);
             if (result.length == 0) {
                 yield put(loginDenied());
             }

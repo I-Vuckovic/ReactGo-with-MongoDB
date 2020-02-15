@@ -9,5 +9,5 @@ export interface Post {
     comments: Comment[],
     dateCreated: string,
     author: string,
-    authorId: number,
+    authorId: string,
 }

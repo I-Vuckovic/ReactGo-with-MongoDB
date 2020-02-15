@@ -3,7 +3,18 @@ import { USERS } from "../constants/urls";
 import { Post } from "../models/post";
 
 export async function fetchUser(user: User) {
-    const res = await fetch(`${USERS}?username=${user.username}&password=${user.password}`);
+
+    return fetch(`${USERS}/password/${user.username}&${user.password}`).then( res => {
+        
+        return res.json()
+    }
+
+    ).then (res => {return res})
+    .catch(error => console.log(error));
+
+
+    const res = await fetch(`${USERS}/password/${user.username}&${user.password}`);
+    console.log(res);
     return await res.json();
         
 }

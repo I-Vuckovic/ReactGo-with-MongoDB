@@ -14,7 +14,7 @@ interface Props {
     failedRequest: boolean,
     addToFavorites: Function,
     removeFromFavorites: Function,
-    userId: number,
+    userId: string,
     news: News[]
 }
 
@@ -70,7 +70,7 @@ class Home extends Component<Props> {
 
                                 <div className="card" key={post.id}>
                                     <div className="card-image">
-                                        <img src={require(`../images/${post.imageUrl}`)}></img>
+                                        <img src={require(`../images/${post.imageUrl}`)} alt='error with image'></img>
                                         {
                                             this.props.logedIn ?
                                                 ((this.props.favoritePosts.length !== 0 && this.props.favoritePosts.includes(post.id!)) ?
@@ -115,8 +115,8 @@ function mapStateToProps(state: any) {
 
 function dispatchToProps(dispatch: Dispatch<Action>) {
     return {
-        addToFavorites: (postId: number, userId: number) => dispatch(addToFavorites(postId, userId)),
-        removeFromFavorites: (postId: number, userId: number) => dispatch(removeFromFavorites(postId, userId))
+        addToFavorites: (postId: number, userId: string) => dispatch(addToFavorites(postId, userId)),
+        removeFromFavorites: (postId: number, userId: string) => dispatch(removeFromFavorites(postId, userId))
     }
 }
 

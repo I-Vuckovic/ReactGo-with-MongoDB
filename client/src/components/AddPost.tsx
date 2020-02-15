@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import M from 'materialize-css';
 
 interface Props {
-    userId: number,
+    userId: string,
     addPost: Function,
     history: any,
     username: string

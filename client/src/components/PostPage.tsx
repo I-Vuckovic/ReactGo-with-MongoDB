@@ -11,7 +11,7 @@ interface Props {
     post: Post,
     requestPost: Function,
     match: any,
-    userId: number,
+    userId: string,
     deletePost: Function,
     history: any,
     allPosts: Post[],
@@ -104,8 +104,8 @@ function dispatchToProps(dispatch: Dispatch<Action>) {
     return {
         requestPost: (postId: number) => dispatch(requestPost(postId)),
         deletePost: (postId: number) => dispatch(deletePost(postId)),
-        addToFavorites: (postId: number, userId: number) => dispatch(addToFavorites(postId, userId)),
-        removeFromFavorites: (postId: number, userId: number) => dispatch(removeFromFavorites(postId, userId))
+        addToFavorites: (postId: number, userId: string) => dispatch(addToFavorites(postId, userId)),
+        removeFromFavorites: (postId: number, userId: string) => dispatch(removeFromFavorites(postId, userId))
     }
 }
 

@@ -8,7 +8,7 @@ import M from 'materialize-css';
 interface Props {
     postId?: number,
     comments?: Comment[],
-    userId: number,
+    userId: string,
     addComment: Function,
     username: string,
     logedIn?: boolean

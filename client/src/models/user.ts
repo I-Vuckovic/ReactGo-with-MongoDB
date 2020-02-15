@@ -2,7 +2,7 @@
 export interface User {
     username: string,
     password: string,
-    id?: number,
+    _id?: string,
     favoritePosts: number[],
     moderator: boolean,
 }

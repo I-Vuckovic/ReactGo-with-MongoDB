@@ -4,7 +4,7 @@ import { LOGIN_REQUEST, LOGIN_APPROVED, LOGIN_DENIED, LOGOUT, CHECK_LOGIN_STATUS
 import { loginRequest, loginApproved, updateFavorites } from "../Actions/userActions";
 
 export interface userState {
-    userId: number;
+    userId: string;
     logedIn: boolean;
     username: string;
     failedRequest: boolean;
@@ -13,7 +13,7 @@ export interface userState {
 }
 
 const initialState: userState = {
-    userId: -1,
+    userId: '',
     logedIn: false,
     username: "",
     failedRequest: false,
@@ -30,7 +30,7 @@ export function userReducer(state: userState = initialState, action: Action) {
                 return{
                     ...state,
                     logedIn: true,
-                    userId: parseInt(localStorage.getItem("id")!),
+                    userId: localStorage.getItem("id")!,
                     username: localStorage.getItem("username")!,
                     moderator: mod,
                     favoritePosts: JSON.parse(localStorage.getItem("favoritePosts")!)
@@ -42,8 +42,10 @@ export function userReducer(state: userState = initialState, action: Action) {
         }
         case LOGIN_APPROVED: {
             const {user} = action as loginApproved;
+            console.log(action)
+            console.log(user);
             localStorage.setItem("username", user.username);
-            localStorage.setItem('id', user.id!.toString());
+            localStorage.setItem('id', user._id!);
             localStorage.setItem("favoritePosts", JSON.stringify(user.favoritePosts));
             localStorage.setItem("moderator", user.moderator.toString());
             return{
@@ -52,7 +54,7 @@ export function userReducer(state: userState = initialState, action: Action) {
                 username: user.username,
                 favoritePosts: user.favoritePosts,
                 loginDenied: false,
-                userId: user.id!,
+                userId: user._id!,
                 moderator: user.moderator
             }
         }
@@ -67,7 +69,7 @@ export function userReducer(state: userState = initialState, action: Action) {
             localStorage.clear();
             return {
                 ...state,
-                userId: -1,
+                userId: '',
                 logedIn: false,
                 username: "",
                 loginDenied: false,

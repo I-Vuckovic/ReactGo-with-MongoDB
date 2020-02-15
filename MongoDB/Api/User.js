@@ -75,9 +75,9 @@ route.get("/password/:userId", (req, res, next) => {
   User.find({"username":id[0],"password":id[1]})
     .exec()
     .then(doc => {
-      console.log("From database", doc);
+      console.log("From database", doc[0]);
       if (doc) {
-        res.status(200).json(doc[0]);
+        res.status(200).json(doc);
       } else {
         res
           .status(404)
@@ -90,6 +90,9 @@ route.get("/password/:userId", (req, res, next) => {
     });
 });
 
+route.get("/request", (req, res, next) => {
+  res.status(200).json({"connected": "true"});
+});
 
 
 module.exports = route;
