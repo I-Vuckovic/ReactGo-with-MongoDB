@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 
 const post = new mongoose.Schema({
-  id: String,
+  id: {type:Number},
   title: String,
   imageUrl: String,
   body: String,
-  numOfFavorites: String,
+  numOfFavorites: {type:Number},
   comments: [Object],
   dateCreated: String,
   author: String,

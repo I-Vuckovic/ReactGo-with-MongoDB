@@ -31,7 +31,7 @@ route.post('/update', async (req, res) => {
 
 route.get("/id/:userId", (req, res, next) => {
   const id = req.params.userId;
-  User.find({"id":id})
+  User.find({"_id":id})
     .exec()
     .then(doc => {
       console.log("From database", doc);
