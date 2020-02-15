@@ -8,7 +8,7 @@ class Footer extends Component {
                     
                     <div className="footer-copyright">
                         <div className="container">
-                            © 2019 Copyright I-Vuckovic
+                            © 2020 Copyright I-Vuckovic
            
                         </div>
                     </div>
