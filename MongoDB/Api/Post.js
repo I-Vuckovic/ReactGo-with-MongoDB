@@ -5,8 +5,9 @@ const route = express.Router();
 
 route.post('/add', async (req, res) => {
   const { title, imageUrl, body, numOfFavorites, comments, dateCreated, author, authorId} = req.body;
+  
   let post = {};
-  //post.id = id;
+  post.id = await Post.count();
   post.title = title;
   post.imageUrl = imageUrl;
   post.body = body;
@@ -21,9 +22,9 @@ route.post('/add', async (req, res) => {
 });
 
 route.post('/update', async (req, res) => {
-  const { _id, title, imageUrl, body, numOfFavorites, comments, dateCreated, author, authorId} = req.body;
+  const { id, title, imageUrl, body, numOfFavorites, comments, dateCreated, author, authorId} = req.body;
   let post = {};
-  post._id = _id;
+  post.id = id;
   post.title = title;
   post.imageUrl = imageUrl;
   post.body = body;
@@ -79,7 +80,7 @@ route.get("/:postId", (req, res, next) => {
 
 route.get("/delete/:postId", (req, res, next) => {
   const id = req.params.postId;
-  Post.deleteOne({"_id":id})
+  Post.deleteOne({"id":id})
     .exec()
     .then(doc => {
       
