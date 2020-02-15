@@ -26,7 +26,7 @@ route.post('/add', async (req, res) => {
 })
 
 route.post('/update', async (req, res) => {
-  const {  title, imageUrl, body, numOfFavorites, comments, dateCreated, author, authorId} = req.body;
+  const { _id, title, imageUrl, body, numOfFavorites, comments, dateCreated, author, authorId} = req.body;
   let post = {};
   post._id = _id;
   post.title = title;
