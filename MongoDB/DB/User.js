@@ -6,7 +6,7 @@ const user = new mongoose.Schema({
   },
     password:String,
     id: String,
-    favoritePosts: [Number],
+    favoritePosts: [String],
     moderator: String,
 });
 
