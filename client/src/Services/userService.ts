@@ -20,7 +20,7 @@ export async function fetchUser(user: User) {
 }
 
 export async function fetchUserByUsername(username: string) {
-    const res = await fetch(`${USERS}?username=${username}`);
+    const res = await fetch(`${USERS}/username/${username}`);
     return await res.json();
         
 }
@@ -47,13 +47,13 @@ export function addToFavorites(postId: number, userId: string) {
     }
 }
 
-export function removeFromFavorites(postId: number, userId: number) {
+export function removeFromFavorites(postId: number, userId: string) {
     try {
-        return fetch(`${USERS}/${userId}`)
+        return fetch(`${USERS}/id/${userId}`)
             .then(res => res.json())
             .then(res => {
                 res.favoritePosts = res.favoritePosts.filter((id:number) => id !== postId);
-                return fetch(`${USERS}/${userId}`, {
+                return fetch(`${USERS}/update`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -68,9 +68,9 @@ export function removeFromFavorites(postId: number, userId: number) {
     }
 }
 
-export async function getUser(id: number){
+export async function getUser(id: string){
     try{
-    const res = await fetch(`${USERS}?id=${id}`);
+    const res = await fetch(`${USERS}/id/${id}`);
     return await res.json();
     }
     catch (res) {
@@ -79,7 +79,7 @@ export async function getUser(id: number){
 }
 
 export function registerUser(user:User){
-    return fetch(USERS, {
+    return fetch(`${USERS}/add`, {
         method: "POST",
         headers:{
             'Content-Type': 'application/json'

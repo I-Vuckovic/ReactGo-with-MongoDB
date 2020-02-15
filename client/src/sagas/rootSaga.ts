@@ -12,14 +12,14 @@ export function* pageRefresh() {
     yield put(checkLoginStatus());
     if (localStorage.getItem("id") !== null) {
         
-        let id = parseInt(localStorage.getItem("id")!);
+        let id = localStorage.getItem("id")!;
         const user = yield getUser(id);
         if (user === undefined) {
             yield put(failedRequest());
         }
         else {
             
-            yield put(updateFavorites(user[0].favoritePosts));
+            yield put(updateFavorites(user.favoritePosts));
         }
     }
 }

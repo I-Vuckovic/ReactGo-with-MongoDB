@@ -19,7 +19,7 @@ export interface updatePost extends Action{
 }
 
 export interface requestPost extends Action{
-    postId: number
+    postId: string
 }
 
 export interface displayIndividualPost extends Action{
@@ -31,7 +31,7 @@ export interface addPost extends Action{
 }
 
 export interface deletePost extends Action{
-    postId: number
+    postId: string
 }
 
 export interface addedNewPost extends Action{
@@ -40,7 +40,7 @@ export interface addedNewPost extends Action{
 }
 
 export interface deletedPost extends Action{
-    postId: number,
+    postId: string,
     news: News
 }
 // #endregion 
@@ -68,7 +68,7 @@ export function updatePost( post: Post): updatePost{
     }
 }
 
-export function requestPost(postId: number): requestPost{
+export function requestPost(postId: string): requestPost{
     return{
         type: REQUEST_POST,
         postId
@@ -89,7 +89,7 @@ export function addPost(post: Post): addPost{
     }
 }
 
-export function deletePost(postId: number): deletePost{
+export function deletePost(postId: string): deletePost{
     return{
         type: DELETE_POST,
         postId
@@ -104,7 +104,7 @@ export function addedNewPost(post: Post, news: News): addedNewPost{
     }
 }
 
-export function deletedPost(postId: number, news: News): deletedPost{
+export function deletedPost(postId: string, news: News): deletedPost{
     return{
         type: DELETED_POST,
         postId,
@@ -142,11 +142,11 @@ export function displayNews(news: News[]): displayNews{
 // #region COMMENTS
 
 export interface addComment extends Action{
-    postId: number
+    postId: string
     comment: Comment
 }
 
-export function addComment(postId: number, comment: Comment): addComment{
+export function addComment(postId: string, comment: Comment): addComment{
     return{
         type: ADD_COMMENT,
         postId,
@@ -155,11 +155,11 @@ export function addComment(postId: number, comment: Comment): addComment{
 }
 
 export interface addedNewComment extends Action{
-    postId: number,
+    postId: string,
     comment: Comment
 }
 
-export function addedNewComment(postId: number, comment: Comment): addedNewComment{
+export function addedNewComment(postId: string, comment: Comment): addedNewComment{
     return{
         type: ADDED_NEW_COMMENT,
         postId,

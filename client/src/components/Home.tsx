@@ -10,7 +10,7 @@ import { News } from '../models/news';
 interface Props {
     logedIn: boolean,
     posts: Post[],
-    favoritePosts: number[],
+    favoritePosts: string[],
     failedRequest: boolean,
     addToFavorites: Function,
     removeFromFavorites: Function,
@@ -68,21 +68,21 @@ class Home extends Component<Props> {
 
                             {this.props.posts.map((post: Post) =>
 
-                                <div className="card" key={post.id}>
+                                <div className="card" key={post._id}>
                                     <div className="card-image">
                                         <img src={require(`../images/${post.imageUrl}`)} alt='error with image'></img>
                                         {
                                             this.props.logedIn ?
-                                                ((this.props.favoritePosts.length !== 0 && this.props.favoritePosts.includes(post.id!)) ?
-                                                    <div onClick={() => this.props.removeFromFavorites(post.id, this.props.userId)} className="btn-floating halfway-fab green"><i className="material-icons icon-hover"></i></div> :
-                                                    <div onClick={() => this.props.addToFavorites(post.id, this.props.userId)} className="btn-floating halfway-fab waves-effect waves-light red"><i className="material-icons">add</i></div>)
+                                                ((this.props.favoritePosts.length !== 0 && this.props.favoritePosts.includes(post._id!)) ?
+                                                    <div onClick={() => this.props.removeFromFavorites(post._id, this.props.userId)} className="btn-floating halfway-fab green"><i className="material-icons icon-hover"></i></div> :
+                                                    <div onClick={() => this.props.addToFavorites(post._id, this.props.userId)} className="btn-floating halfway-fab waves-effect waves-light red"><i className="material-icons">add</i></div>)
                                                 :
 
                                                 <button onClick={() => { this.toast() }} className="btn-floating halfway-fab waves-effect waves-light red"><i className="material-icons">add</i></button>
                                         }
                                     </div>
                                     <div className="card-content black-text">
-                                        <Link to={`/post/${post.id}`} style={{ textDecoration: 'none' }}><span className="card-title black-text"> {`${post.title}`} </span></Link>
+                                        <Link to={`/post/${post._id}`} style={{ textDecoration: 'none' }}><span className="card-title black-text"> {`${post.title}`} </span></Link>
                                         <p>{`${post.body.slice(0,100)}`} {post.body.length > 100 ? "...": ""}</p>
                                     </div>
                                     <div className="card-content">
@@ -115,8 +115,8 @@ function mapStateToProps(state: any) {
 
 function dispatchToProps(dispatch: Dispatch<Action>) {
     return {
-        addToFavorites: (postId: number, userId: string) => dispatch(addToFavorites(postId, userId)),
-        removeFromFavorites: (postId: number, userId: string) => dispatch(removeFromFavorites(postId, userId))
+        addToFavorites: (postId: string, userId: string) => dispatch(addToFavorites(postId, userId)),
+        removeFromFavorites: (postId: string, userId: string) => dispatch(removeFromFavorites(postId, userId))
     }
 }
 

@@ -7,7 +7,7 @@ interface Props {
     username: string;
     getFavoritePosts: Function;
     posts: Post[];
-    favoritePosts: number[]
+    favoritePosts: string[]
 }
 
 interface State {
@@ -44,7 +44,7 @@ class ProfilePage extends Component<Props, State> {
         if (prevProps.posts !== prevState.prevRecievedPosts){
 
             let pom: Post[] = [];
-            this.props.favoritePosts.forEach(val => { pom = [...pom, ...this.props.posts.filter((post: Post) => post.id == val)] })
+            this.props.favoritePosts.forEach(val => { pom = [...pom, ...this.props.posts.filter((post: Post) => post._id == val)] })
 
             this.setState({
                 filteredPosts: pom,
@@ -78,7 +78,7 @@ class ProfilePage extends Component<Props, State> {
                         this.state.filteredPosts === null ?
                             ""
                             :  (this.state.filteredPosts!.reverse().map((post: Post) =>
-                            <Link to={`/post/${post.id}`} className="collection-item" style={{ textDecoration: 'none' }}>{`${post.title}`}</Link>))
+                            <Link to={`/post/${post._id}`} className="collection-item" style={{ textDecoration: 'none' }}>{`${post.title}`}</Link>))
                     }
                 </ul>
 

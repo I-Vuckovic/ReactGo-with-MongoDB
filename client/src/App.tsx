@@ -32,20 +32,25 @@ console.log(new Date());
 class App extends React.Component {
   render() {
     return (
-      <Provider store={store}>
+      
+        <Provider store={store}>
         <BrowserRouter>
             <ScrollToTop>
               <Navbar></Navbar>
-              <Route exact path="/" component={Home}></Route>
-              <Route exact path="/login" component={Login}></Route>
-              <Route path="/post/:postId" component={PostPage}></Route>
-              <Route path="/addpost" component={AddPost}></Route>
-              <Route path="/profilepage" component={ProfilePage}></Route>
-              <Route path="/register" component={Register}></Route>
+              <main>
+                <Route exact path="/" component={Home}></Route>
+                <Route exact path="/login" component={Login}></Route>
+                <Route path="/post/:postId" component={PostPage}></Route>
+                <Route path="/addpost" component={AddPost}></Route>
+                <Route path="/profilepage" component={ProfilePage}></Route>
+                <Route path="/register" component={Register}></Route>
+              </main>
               <Footer></Footer>
             </ScrollToTop>
         </BrowserRouter>
       </Provider>
+     
+      
     );
   }
 

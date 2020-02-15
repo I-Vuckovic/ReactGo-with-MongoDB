@@ -1,7 +1,7 @@
 import { Comment } from "./comment";
 
 export interface Post {
-    id?: number,
+    _id?: string,
     title: string,
     imageUrl: string,
     body: string,

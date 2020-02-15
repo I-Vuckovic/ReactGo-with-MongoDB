@@ -7,7 +7,7 @@ const user = new mongoose.Schema({
     password:String,
     id: String,
     favoritePosts: [String],
-    moderator: String,
+    moderator: Boolean,
 });
 
 module.exports = User = mongoose.model('user', user);

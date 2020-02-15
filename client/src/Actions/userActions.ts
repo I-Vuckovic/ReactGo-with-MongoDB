@@ -25,17 +25,17 @@ export interface checkLoginStatus extends Action {
 }
 
 export interface addToFavorites extends Action {
-    postId: number;
+    postId: string;
     userId: string;
 }
 
 export interface removeFromFavorites extends Action{
-    postId: number;
+    postId: string;
     userId: string
 }
 
 export interface updateFavorites extends Action{
-    favoritePosts: number[];
+    favoritePosts: string[];
 }
 
 export interface register extends Action{
@@ -86,7 +86,7 @@ export function checkLoginStatus(): checkLoginStatus {
     }
 }
 
-export function addToFavorites(postId: number, userId: string): addToFavorites {
+export function addToFavorites(postId: string, userId: string): addToFavorites {
     return{
         type: ADD_TO_FAVORITES,
         postId,
@@ -94,7 +94,7 @@ export function addToFavorites(postId: number, userId: string): addToFavorites {
     }
 }
 
-export function removeFromFavorites(postId: number, userId: string): removeFromFavorites{
+export function removeFromFavorites(postId: string, userId: string): removeFromFavorites{
     return{
         type: REMOVE_FROM_FAVORITES,
         postId,
@@ -102,7 +102,7 @@ export function removeFromFavorites(postId: number, userId: string): removeFromF
     }
 }
 
-export function updateFavorites(favoritePosts: number[] ) :updateFavorites{
+export function updateFavorites(favoritePosts: string[] ) :updateFavorites{
     return{
         type: UPDATE_FAVORITES,
         favoritePosts

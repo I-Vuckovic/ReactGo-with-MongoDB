@@ -6,7 +6,7 @@ import { addComment } from '../Actions/postActions';
 import M from 'materialize-css';
 
 interface Props {
-    postId?: number,
+    postId?: string,
     comments?: Comment[],
     userId: string,
     addComment: Function,
@@ -80,7 +80,7 @@ function mapStateToProps(state: any) {
 
 function dispatchToProps(dispatch: Dispatch<Action>) {
     return {
-        addComment: (postId: number, comment: Comment) => dispatch(addComment(postId, comment))
+        addComment: (postId: string, comment: Comment) => dispatch(addComment(postId, comment))
     }
 }
 

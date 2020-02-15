@@ -14,7 +14,7 @@ export async function fetchPosts() {
     }
 }
 
-export async function fetchPost(postId:number){
+export async function fetchPost(postId:string){
     const res = await fetch(`${POSTS}/${postId}`);
     return await res.json();
 }
@@ -25,7 +25,7 @@ export function fetchRequest() {
         .catch(error => console.log(error));
 }
 
-export async function updatePost_PUT(incrementer: number, postId: number) {
+export async function updatePost_PUT(incrementer: number, postId: string) {
 
     const res = await fetch(`${POSTS}/${postId}`);
     const res_1 = await res.json();
@@ -42,7 +42,7 @@ export async function updatePost_PUT(incrementer: number, postId: number) {
 
 export function addPost_POST(post: Post){
 
-    return fetch(POSTS, {
+    return fetch(`${POSTS}/add`, {
         method: "POST",
         headers:{
             'Content-Type': 'application/json'
@@ -52,7 +52,7 @@ export function addPost_POST(post: Post){
 }
 
 export function addNews(news: News){
-    return fetch(NEWS, {
+    return fetch(`${NEWS}/add`, {
         method: "POST",
         headers:{
             'Content-Type': 'application/json'
@@ -71,19 +71,18 @@ export async function fetchNews(){
     }
 }
 
-export async function deletePost(postId:number){
-    const res = await fetch(`${POSTS}/${postId}`, {
-        method: "DELETE"
+export async function deletePost(postId:string){
+    const res = await fetch(`${POSTS}/delete/${postId}`, {
     });
     return await res.json();
 }
 
-export function addCommentToPost(postId:number , comment: Comment){
+export function addCommentToPost(postId:string , comment: Comment){
     return fetch(`${POSTS}/${postId}`)
     .then(res => res.json())
     .then(res => {
         res.comments = [...res.comments, comment];
-        return fetch(`${POSTS}/${postId}`, {
+        return fetch(`${POSTS}/update`, {
             method: "POST",
             headers:{
                 'Content-Type': 'application/json'

@@ -18,7 +18,7 @@ interface Props {
     addToFavorites: Function,
     logedIn: boolean,
     removeFromFavorites: Function,
-    favoritePosts: number[]
+    favoritePosts: string[]
 }
 
 class PostPage extends Component<Props> {
@@ -63,9 +63,9 @@ class PostPage extends Component<Props> {
                     <div className="col s12 m1">
                         {
                             this.props.logedIn ?
-                                ((this.props.favoritePosts.length !== 0 && this.props.favoritePosts.includes(this.props.post.id!)) ?
-                                    <div onClick={() => this.props.removeFromFavorites(this.props.post.id, this.props.userId)} className="btn-floating green"><i className="material-icons icon-hover"></i></div> :
-                                    <div onClick={() => this.props.addToFavorites(this.props.post.id, this.props.userId)} className="btn-floating waves-effect waves-light red"><i className="material-icons">add</i></div>)
+                                ((this.props.favoritePosts.length !== 0 && this.props.favoritePosts.includes(this.props.post._id!)) ?
+                                    <div onClick={() => this.props.removeFromFavorites(this.props.post._id, this.props.userId)} className="btn-floating green"><i className="material-icons icon-hover"></i></div> :
+                                    <div onClick={() => this.props.addToFavorites(this.props.post._id, this.props.userId)} className="btn-floating waves-effect waves-light red"><i className="material-icons">add</i></div>)
                                 :
 
                                 <button onClick={() => { this.toast() }} className="btn-floating waves-effect waves-light red"><i className="material-icons">add</i></button>
@@ -79,12 +79,12 @@ class PostPage extends Component<Props> {
                 {
                     this.props.post.authorId === this.props.userId ?
                         <div onClick={() => {
-                            this.props.deletePost(this.props.post.id);
+                            this.props.deletePost(this.props.post._id);
                             this.props.history.push("/");
                         }} className="btn indigo">Delete this post </div> :
                         null
                 }
-                <CommentSection postId={this.props.post.id}></CommentSection>
+                <CommentSection postId={this.props.post._id}></CommentSection>
             </div>
         )
     }
@@ -102,10 +102,10 @@ function mapStateToProps(state: any) {
 
 function dispatchToProps(dispatch: Dispatch<Action>) {
     return {
-        requestPost: (postId: number) => dispatch(requestPost(postId)),
-        deletePost: (postId: number) => dispatch(deletePost(postId)),
-        addToFavorites: (postId: number, userId: string) => dispatch(addToFavorites(postId, userId)),
-        removeFromFavorites: (postId: number, userId: string) => dispatch(removeFromFavorites(postId, userId))
+        requestPost: (postId: string) => dispatch(requestPost(postId)),
+        deletePost: (postId: string) => dispatch(deletePost(postId)),
+        addToFavorites: (postId: string, userId: string) => dispatch(addToFavorites(postId, userId)),
+        removeFromFavorites: (postId: string, userId: string) => dispatch(removeFromFavorites(postId, userId))
     }
 }
 
