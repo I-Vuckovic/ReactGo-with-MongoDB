@@ -58,7 +58,7 @@ class PostPage extends Component<Props> {
         return (
             <div className="container addPadding">
                 <h2 className="">{this.props.post.title}</h2>
-                <p>{this.props.post.body}</p>
+                <p className="breakWord">{this.props.post.body}</p>
                 <div className="row">
                     <div className="col s12 m1">
                         {

@@ -83,7 +83,7 @@ class Home extends Component<Props> {
                                     </div>
                                     <div className="card-content black-text">
                                         <Link to={`/post/${post._id}`} style={{ textDecoration: 'none' }}><span className="card-title black-text"> {`${post.title}`} </span></Link>
-                                        <p>{`${post.body.slice(0,100)}`} {post.body.length > 100 ? "...": ""}</p>
+                                        <p className="breakWord">{`${post.body.slice(0,100)}`} {post.body.length > 100 ? "...": ""}</p>
                                     </div>
                                     <div className="card-content">
                                         <i className="material-icons red-text left">favorite</i>
